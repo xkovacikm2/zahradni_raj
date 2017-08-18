@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stored_filename: MyString
+  extension: MyString
+  original_filename: MyString
+  offer: one
+
+two:
+  stored_filename: MyString
+  extension: MyString
+  original_filename: MyString
+  offer: two
