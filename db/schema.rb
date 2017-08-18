@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170818135926) do
   enable_extension "plpgsql"
 
   create_table "countries", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.index ["name"], name: "index_countries_on_name", using: :btree
   end
 
@@ -51,32 +51,32 @@ ActiveRecord::Schema.define(version: 20170818135926) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.date     "date"
-    t.integer  "request_id"
+    t.date     "date",       null: false
+    t.integer  "request_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["request_id"], name: "index_offers_on_request_id", using: :btree
   end
 
   create_table "recruitment_centers", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.index ["name"], name: "index_recruitment_centers_on_name", using: :btree
   end
 
   create_table "regions", force: :cascade do |t|
-    t.string  "name"
-    t.integer "country_id"
+    t.string  "name",       null: false
+    t.integer "country_id", null: false
     t.index ["country_id"], name: "index_regions_on_country_id", using: :btree
     t.index ["name"], name: "index_regions_on_name", using: :btree
   end
 
   create_table "request_categories", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.index ["name"], name: "index_request_categories_on_name", using: :btree
   end
 
   create_table "requests", force: :cascade do |t|
-    t.date     "date"
+    t.date     "date",                            null: false
     t.integer  "customer_id"
     t.integer  "request_categories", default: [],              array: true
     t.datetime "created_at",                      null: false
