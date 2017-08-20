@@ -1,0 +1,11 @@
+- @page_title = t 'user.new.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'list', t('resources.list'), users_path, class: 'btn btn-default btn-sm'
+
+  .box-body
+    = render 'form'
+

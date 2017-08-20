@@ -1,0 +1,19 @@
+- @page_title = t 'user.show.title'
+
+.row
+  .col-xs-12
+    .box.box-primary
+      .box-header.with-border
+        %h3.box-title= t('resources.details')
+        .box-tools
+          = icon_link_to 'edit', t('resources.edit'), edit_user_path, class: 'btn btn-primary btn-sm'
+          = icon_link_to 'plus', t('resources.new'), new_user_path, class: 'btn btn-default btn-sm'
+          = icon_link_to 'list', t('resources.list'), users_path, class: 'btn btn-default btn-sm'
+
+      .box-body
+        %dl.dl-horizontal.dl-details
+          %dt= t('activerecord.attributes.user.email')
+          %dd= @user.email
+
+          %dt= t 'resources.created_at'
+          %dd= @user.created_at

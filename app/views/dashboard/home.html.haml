@@ -1,0 +1,19 @@
+- @page_title = t 'dashboard.home.title'
+
+.row
+  .col-md-12
+    .box.box-primary
+      .box-header
+        %h3.box-title= t 'dashboard.welcome'
+      .box-body
+        .row
+          .col-lg-4.col-md-4
+            %a.small-box.bg-aqua{href: new_user_path}
+              .inner
+                %h3 Create user
+                %p Create new user
+              .icon
+                %i.ion.ion-bag
+              .small-box-footer
+                %i.fa.fa-arrow-circle-right
+                  Go and create new user

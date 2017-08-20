@@ -1,0 +1,11 @@
+%meta{charset: 'utf-8'}/
+%meta{content: 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible'}/
+%meta{content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name: 'viewport'}/
+%meta{content: 'yes', name: 'apple-mobile-web-app-capable'}/
+%meta{content: 'none', name: 'msapplication-config'}/
+%title #{@page_title + ' - ' unless @page_title.blank?} Zahradní ráj
+= stylesheet_link_tag 'application', 'data-turbolinks-track' => true
+= csrf_meta_tags
+
+= javascript_include_tag 'application', 'data-turbolinks-track' => true
+

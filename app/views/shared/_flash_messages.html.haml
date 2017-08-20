@@ -1,0 +1,6 @@
+- if messages.any?
+  #flash.flash
+    - messages.each do |type, message|
+      %div{class: "alert alert-#{flash_message_type_to_class(type)} alert-dismissable"}
+        %button.close{data: {dismiss: :alert}} &times;
+        = message.html_safe

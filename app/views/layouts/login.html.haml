@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    = render 'layouts/head'
+  %body.hold-transition.login-page
+    .login-box
+      .login-logo
+        %a.logo{:href => root_path}
+
+      = flash_messages
+      = yield
+
+    = include_rails_script

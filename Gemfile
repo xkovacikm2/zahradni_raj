@@ -34,6 +34,12 @@ gem 'rails_script'
 gem 'adminlte-rails'
 # Haml instead of Erb
 gem 'haml'
+# pagination
+gem 'kaminari'
+# bootstrap
+gem 'bootstrap_form'
+gem 'nested_form'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

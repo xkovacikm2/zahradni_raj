@@ -1,0 +1,12 @@
+- @page_title = t 'user.edit.title'
+
+.box
+  .box-header
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'info-circle',t('resources.show'), @user, class: 'btn btn-primary btn-sm'
+      = icon_link_to 'plus', t('resources.new'), new_user_path, class: 'btn btn-default btn-sm'
+      = icon_link_to 'list', t('resources.list'), users_path, class: 'btn btn-default btn-sm'
+
+  .box-body
+    = render 'form'

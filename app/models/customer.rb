@@ -1,4 +1,6 @@
 class Customer < ApplicationRecord
+  include Filterable
+
   belongs_to :recruitment_center
   belongs_to :country
   belongs_to :region

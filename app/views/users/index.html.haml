@@ -1,0 +1,36 @@
+- @page_title = t 'user.index.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_user_path, class: 'btn btn-primary btn-sm'
+
+  .box-body
+    = search_form User, email: {}
+
+    %small.pull-right.text-muted
+      = t 'resources.count', count: number_with_delimiter(@users.total_count)
+      \|
+      = t 'resources.pages', count: number_with_delimiter(@users.total_pages)
+    = paginate @users
+
+    %table.table.table-hover
+      %thead
+        %tr
+          %th= t('activerecord.attributes.user.email')
+          %th
+
+      %tbody.rowlink
+        - if @users.total_count == 0
+          %tr
+            %td{colspan: 2}= t 'resources.no_items'
+        - @users.each do |user|
+          %tr
+            %td= link_to user.email, user
+
+            %td.rowlink-skip.text-right
+              = icon_link_to 'edit', t('resources.edit'), edit_user_path(user), class: 'btn btn-default btn-xs' if current_user == user
+              = icon_link_to 'times', t('resources.delete'), user, :method => :delete, :data => { :confirm => t('resources.confirm_deletion') }, class: 'btn btn-danger btn-xs'
+
+    %br
