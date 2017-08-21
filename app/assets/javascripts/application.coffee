@@ -14,7 +14,6 @@
 #= require jquery_ujs
 #= require bootstrap.min
 #= require admin-lte
-#= require turbolinks
 #= require select2
 #= require bootstrap-datepicker/core
 #= require jquery_nested_form
