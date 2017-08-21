@@ -1,0 +1,39 @@
+- countries = Country.all
+
+= bootstrap_nested_form_for @customer, layout: :horizontal, label_col: 'col-sm-3', control_col: 'col-sm-8' do |f|
+  = f.alert_message t('views.forms.alert_message')
+
+  .row
+    .col-md-6
+      .box.box-primary
+        .box-header.with-border
+          %h3.box-title= t 'customer.form.general'
+        .box-body
+          = f.text_field :name
+          = f.text_field :surname
+          = f.text_field :company
+          = f.text_field :ico
+          = f.text_field :dic
+          = f.collection_select :recruitment_center_id, RecruitmentCenter.all, :id, :name
+          = f.collection_select :country_id, countries, :id, :name
+          = f.collection_select :region_id, Region.all, :id, :name, {}, data: {countries: countries.map{ |c| [c.id, c.regions.map{|r| {id: r.id, text: r.name}}]}.to_h}
+          = f.text_field :address
+          = f.email_field :email
+          = f.phone_field :phone
+          = f.text_area :note
+
+      .box
+        .box-header.with-border
+          %h3.box-title= t 'customer.form.requests'
+        .box-body
+          = f.fields_for :requests, label_col: 'col-sm-3', control_col: 'col-sm-8' do |q|
+            = render 'customers/request_fields', f: q
+
+          = f.link_to_add t('customer.form.add_request'), :requests, class: 'btn btn-default btn-sm col-sm-offset-5'
+
+
+      .box.box-success
+        .box-body
+          .row
+            .col-md-6.col-md-offset-3
+              = f.submit t('resources.save'), class: 'btn btn-primary btn-block'

@@ -13,9 +13,14 @@
  */
 
 @import "bootstrap";
-@import "font-awesome";
 
 @import 'AdminLTE/alt/AdminLTE-without-plugins';
 @import 'AdminLTE/skins/skin-blue-light';
 @import 'AdminLTE/skins/skin-red-light';
 
+@import "font-awesome";
+@import 'select2';
+@import 'select2-bootstrap';
+@import 'bootstrap-datepicker3';
+
+@import 'filter';

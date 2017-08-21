@@ -1,0 +1,74 @@
+- @page_title = t 'customer.show.title', name: @customer.name, surname: @customer.surname
+
+.row
+  .col-md-6
+    .box.box-primary
+      .box-header.with-border
+        %h3.box-title= t 'customer.form.general'
+      .box-body
+        %dl.dl-horizontal.dl-details
+          %dt= t 'activerecord.attributes.customer.name'
+          %dt= @customer.name
+
+          %dt= t 'activerecord.attributes.customer.surname'
+          %dt= @customer.surname
+
+          - unless @customer.company.blank?
+            %dt= t 'activerecord.attributes.customer.company'
+            %dt= @customer.company
+
+            %dt= t 'activerecord.attributes.customer.ico'
+            %dt= @customer.ico
+
+            %dt= t 'activerecord.attributes.customer.dic'
+            %dt= @customer.dic
+
+          %dt= t 'activerecord.attributes.customer.recruitment_center_id'
+          %dt= @customer.recruitment_center.name
+
+          %dt= t 'activerecord.attributes.customer.country_id'
+          %dt= @customer.country.name
+
+          %dt= t 'activerecord.attributes.customer.region_id'
+          %dt= @customer.region.name
+
+          %dt= t 'activerecord.attributes.customer.address'
+          %dt= @customer.address
+
+          %dt= t 'activerecord.attributes.customer.phone'
+          %dt= @customer.phone
+
+          %dt= t 'activerecord.attributes.customer.note'
+          %dt= @customer.note
+
+  .col-md-6
+    .box
+      .box-header.with-border
+        %h3.box-title= t 'customer.show.requests_orders'
+      - @customer.requests.each do |request|
+        .box-body
+          %table.table.table-condensed.table-bordered.table-hover
+            %thead
+              %th= t 'activerecord.attributes.equipment.code'
+              %th= t 'activerecord.attributes.equipment.name'
+              %th= t 'activerecord.attributes.equipment.serial_number'
+            %tbody
+              - @asset.equipments.each do |equipment|
+                %tr
+                  %td= equipment.code
+                  %td= equipment.name
+                  %td= equipment.serial_number
+
+    .box
+      .box-header.with-border
+        %h3.box-title= t 'asset.form.insurance'
+      .box-body
+        %dl.dl-horizontal.dl-details
+          %dt= t('activerecord.attributes.asset.is_insured')
+          %dd= @asset.is_insured ? t('yes') : t('no')
+
+          %dt= t('activerecord.attributes.asset.insurance_agreement_number')
+          %dd= @asset.insurance_agreement_number
+
+          %dt= t('activerecord.attributes.asset.insurance_base_value')
+          %dd= ln @asset.insurance_base_value

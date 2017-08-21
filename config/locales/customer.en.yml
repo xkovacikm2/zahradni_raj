@@ -1,0 +1,32 @@
+en:
+  customer:
+    edit:
+      title: "Edit customer"
+    new:
+      title: "New customer"
+    show:
+      title: "Customer %{name} %{surname}"
+      requests_orders: "Requests and orders overview"
+    index:
+      title: "Customers"
+    form:
+      add_request: "Add request"
+      general: "Customer information"
+      requests: "Requests"
+
+  activerecord:
+    attributes:
+      customer:
+        id: "Customer"
+        email: "Email"
+        name: "Name"
+        surname: "Surname"
+        company: "Company name"
+        ico: "ICO"
+        dic: "DIC"
+        address: "Address"
+        phone: "Phone"
+        note: "Note"
+        recruitment_center_id: "Recruitment center"
+        country_id: "Country"
+        region_id: "Region"

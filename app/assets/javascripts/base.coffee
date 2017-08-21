@@ -2,6 +2,8 @@ class App.Base
 
   constructor: ->
     if (window.jQuery) then RailsScript.setClearEventHandlers() # clearing application event handlers only possible with jQuery
+    Utility.Utility.initInputs()
+    $(document).on 'nested:fieldAdded', (e) -> Utility.Utility.initInputs()
     return this
 
 
