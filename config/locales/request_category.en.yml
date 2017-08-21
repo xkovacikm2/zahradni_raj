@@ -1,0 +1,16 @@
+en:
+  request_category:
+    edit:
+      title: "Edit request category"
+    new:
+      title: "New request category"
+    index:
+      title: "Request categories"
+    form:
+      create: "Create request category"
+
+  activerecord:
+    attributes:
+      request_category:
+        id: "Request category"
+        name: "Name"

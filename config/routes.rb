@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :recruitment_centers, except: :show
   resources :countries, except: :show
   resources :regions, except: :show
+  resources :request_categories, except: :show
 end
