@@ -61,10 +61,12 @@
               - request.categories.each do |c|
                 %span.label.label-success=  c.name
 
+
+          %dl.dl-horizontal.dl-details
             - offer = request.offer
             - if offer.nil?
               %dt= t 'offer.form.create'
-              %dd= icon_link_to 'plus', t('resources.new'), new_offer_path, class: 'btn btn-primary btn-sm'
+              %dd= icon_link_to 'plus', t('resources.new'), new_offer_path, class: 'btn btn-primary btn-xs'
             - else
               %dt= t 'activerecord.attributes.offer.date'
               %dd= offer.date
@@ -80,3 +82,4 @@
                     %td= file.public_name
                     %td.rowlink-skip.text-right
                       = icon_link_to 'times', t('resources.delete'), file, :method => :delete, :data => { :confirm => t('resources.confirm_deletion') }, class: 'btn btn-danger btn-xs'
+        %hr
