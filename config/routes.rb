@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :customers
   resources :offers, only: [:new, :create, :destroy]
+  resources :recruitment_centers, except: :show
+  resources :countries, except: :show
+  resources :regions, except: :show
 end

@@ -1,0 +1,36 @@
+- @page_title = t 'recruitment_center.index.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_recruitment_center_path, class: 'btn btn-primary btn-sm'
+
+  .box-body
+    = search_form RecruitmentCenter, {name: {}}
+
+    %small.pull-right.text-muted
+      = t 'resources.count', count: number_with_delimiter(@centers.total_count)
+      \|
+      = t 'resources.pages', count: number_with_delimiter(@centers.total_pages)
+    = paginate @centers
+
+    %table.table.table-hover
+      %thead
+        %tr
+          %th= t('activerecord.attributes.customer.name')
+          %th
+
+      %tbody.rowlink
+        - if @centers.total_count == 0
+          %tr
+            %td{colspan: 2}= t 'resources.no_items'
+        - @centers.each do |center|
+          %tr
+            %td= center.name
+
+            %td.rowlink-skip.text-right
+              = icon_link_to 'edit', t('resources.edit'), edit_recruitment_center_path(center), class: 'btn btn-default btn-xs'
+              = icon_link_to 'times', t('resources.delete'), center, :method => :delete, :data => { :confirm => t('resources.confirm_deletion') }, class: 'btn btn-danger btn-xs'
+
+    %br

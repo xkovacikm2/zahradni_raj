@@ -1,0 +1,37 @@
+- @page_title = t 'region.index.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_region_path, class: 'btn btn-primary btn-sm'
+
+  .box-body
+    = search_form Region, {name: {}, country_id: {options: search_options(Country, :name)}}
+
+    %small.pull-right.text-muted
+      = t 'resources.count', count: number_with_delimiter(@regions.total_count)
+      \|
+      = t 'resources.pages', count: number_with_delimiter(@regions.total_pages)
+    = paginate @regions
+
+    %table.table.table-hover
+      %thead
+        %tr
+          %th= t('activerecord.attributes.customer.name')
+          %th
+
+      %tbody.rowlink
+        - if @regions.total_count == 0
+          %tr
+            %td{colspan: 3}= t 'resources.no_items'
+        - @regions.each do |region|
+          %tr
+            %td= region.name
+            %td= region.country.name
+
+            %td.rowlink-skip.text-right
+              = icon_link_to 'edit', t('resources.edit'), edit_region_path(region), class: 'btn btn-default btn-xs'
+              = icon_link_to 'times', t('resources.delete'), region, :method => :delete, :data => { :confirm => t('resources.confirm_deletion') }, class: 'btn btn-danger btn-xs'
+
+    %br

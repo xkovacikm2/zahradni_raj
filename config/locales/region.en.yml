@@ -1,0 +1,17 @@
+en:
+  region:
+    edit:
+      title: "Edit region"
+    new:
+      title: "New region"
+    index:
+      title: "Regions"
+    form:
+      create: "Create region"
+
+  activerecord:
+    attributes:
+      region:
+        id: "Regions"
+        name: "Name"
+        country_id: "Country"

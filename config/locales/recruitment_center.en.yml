@@ -1,0 +1,16 @@
+en:
+  recruitment_center:
+    edit:
+      title: "Edit recruitment center"
+    new:
+      title: "New recruitment center"
+    index:
+      title: "Recruitment centers"
+    form:
+      create: "Create recruitment center"
+
+  activerecord:
+    attributes:
+      recruitment_center:
+        id: "Recruitment center"
+        name: "Name"

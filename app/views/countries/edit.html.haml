@@ -1,0 +1,11 @@
+- @page_title = t 'country.edit.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_country_path, class: 'btn btn-default btn-sm'
+      = icon_link_to 'list', t('resources.list'), countries_path, class: 'btn btn-default btn-sm'
+
+  .box-body
+    = render 'form'

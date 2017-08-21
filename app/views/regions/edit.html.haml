@@ -1,0 +1,11 @@
+- @page_title = t 'region.edit.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_region_path, class: 'btn btn-default btn-sm'
+      = icon_link_to 'list', t('resources.list'), regions_path, class: 'btn btn-default btn-sm'
+
+  .box-body
+    = render 'form'

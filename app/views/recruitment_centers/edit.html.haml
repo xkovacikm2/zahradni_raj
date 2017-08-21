@@ -1,0 +1,11 @@
+- @page_title = t 'recruitment_center.edit.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_recruitment_center_path, class: 'btn btn-default btn-sm'
+      = icon_link_to 'list', t('resources.list'), recruitment_centers_path, class: 'btn btn-default btn-sm'
+
+  .box-body
+    = render 'form'

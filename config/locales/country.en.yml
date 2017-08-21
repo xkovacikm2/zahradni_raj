@@ -1,0 +1,16 @@
+en:
+  country:
+    edit:
+      title: "Edit country"
+    new:
+      title: "New country"
+    index:
+      title: "Countries"
+    form:
+      create: "Create country"
+
+  activerecord:
+    attributes:
+      country:
+        id: "Country"
+        name: "Name"
