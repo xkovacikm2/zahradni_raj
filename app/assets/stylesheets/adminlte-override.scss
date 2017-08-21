@@ -1,0 +1,44 @@
+.sidebar-menu {
+  > li {
+    &.line {
+      border-top: 1px solid #e8e8e8;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &.header {
+      padding: 10px 25px 10px 10px;
+    }
+
+    a {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block;
+      overflow: hidden;
+      padding: 12px 5px 12px 5px;
+    }
+  }
+
+  .treeview-menu > li > a {
+    padding: 5px;
+  }
+}
+
+.navbar {
+  background-color: white;
+}
+
+@media screen and (min-width: 765px) {
+  .content-wrapper {
+    margin-left: 180px;
+  }
+
+  .main-header > .navbar {
+    margin-left: 180px;
+  }
+
+  .main-sidebar,
+  .left-side {
+    width: 180px;
+  }
+}

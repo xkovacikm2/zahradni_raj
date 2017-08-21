@@ -1,0 +1,14 @@
+en:
+  offer_file:
+    edit:
+      title: "Edit offer file"
+    new:
+      title: "New offer file"
+    index:
+      title: "Offer files"
+
+  activerecord:
+    attributes:
+      offer_file:
+        id: "Offer files"
+        original_filename: "Uploaded file"

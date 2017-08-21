@@ -1,0 +1,58 @@
+- @page_title = t 'customer.index.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_customer_path, class: 'btn btn-primary btn-sm'
+
+  .box-body
+    = search_form Customer,{name: {},
+                            surname: {},
+                            company: {},
+                            ico: {},
+                            dic: {},
+                            country_id: {options: search_options(Country, :name)},
+                            region_id: {options: search_options(Region, :name)},
+                            recruitment_center_id: {options: search_options(RecruitmentCenter, :name)},
+                            email: {},
+                            has_unresolved_request: {type: :boolean}}
+
+    %small.pull-right.text-muted
+      = t 'resources.count', count: number_with_delimiter(@customers.total_count)
+      \|
+      = t 'resources.pages', count: number_with_delimiter(@customers.total_pages)
+    = paginate @customers
+
+    %table.table.table-hover
+      %thead
+        %tr
+          %th= t('activerecord.attributes.customer.name')
+          %th= t('activerecord.attributes.customer.surname')
+          %th= t('activerecord.attributes.customer.recruitment_center_id')
+          %th= t('activerecord.attributes.customer.country_id')
+          %th= t('activerecord.attributes.customer.region_id')
+          %th= t('activerecord.attributes.customer.address')
+          %th= t('activerecord.attributes.customer.company')
+          %th
+
+      %tbody.rowlink
+        - if @customers.total_count == 0
+          %tr
+            %td{colspan: 8}= t 'resources.no_items'
+        - @customers.each do |customer|
+          %tr
+            %td= customer.name
+            %td= customer.surname
+            %td= customer.recruitment_center.name
+            %td= customer.country.name
+            %td= customer.region.name
+            %td= customer.address
+            %td= customer.company
+
+            %td.rowlink-skip.text-right
+              = icon_link_to 'info-circle', t('resources.show'), customer, class: 'btn btn-primary btn-xs'
+              = icon_link_to 'edit', t('resources.edit'), edit_customer_path(customer), class: 'btn btn-default btn-xs'
+              = icon_link_to 'times', t('resources.delete'), customer, :method => :delete, :data => { :confirm => t('resources.confirm_deletion') }, class: 'btn btn-danger btn-xs'
+
+    %br

@@ -6,7 +6,7 @@ class Request < ApplicationRecord
   before_save :sanitize_categories
 
   def categories
-    RequestCategory.where('request_categories.id IN ?', self.request_categories)
+    RequestCategory.where('request_categories.id IN (?)', self.request_categories)
   end
 
   private

@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:edit, :update, :destroy]
 
   def index
-    @customers = Customer.filter_by(params[:filter]).page params[:page]
+    @customers = Customer.includes(:recruitment_center, :country, :region).filter_by(params[:filter]).page params[:page]
   end
 
   def show
@@ -30,7 +30,7 @@ class CustomersController < ApplicationController
 
   def destroy
     @customer.destroy
-    redirect_to customers_path, notice: t('devise.registrations.destroyed')
+    redirect_to customers_path, notice: t('resources.destroy.success')
   end
 
   private

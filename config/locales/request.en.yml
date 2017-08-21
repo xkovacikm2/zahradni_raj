@@ -1,0 +1,15 @@
+en:
+  request:
+    edit:
+      title: "Edit request"
+    new:
+      title: "New request"
+    index:
+      title: "Requests"
+
+  activerecord:
+    attributes:
+      request:
+        id: "Request"
+        date: "Request date"
+        request_categories: "Request categories"

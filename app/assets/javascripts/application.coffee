@@ -18,5 +18,6 @@
 #= require select2
 #= require bootstrap-datepicker/core
 #= require jquery_nested_form
+#= require rowlink
 #= require rails_script
 #= require_tree .

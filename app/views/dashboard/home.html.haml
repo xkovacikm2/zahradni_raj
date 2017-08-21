@@ -8,12 +8,23 @@
       .box-body
         .row
           .col-lg-4.col-md-4
-            %a.small-box.bg-aqua{href: new_user_path}
+            %a.small-box.bg-aqua{href: new_customer_path}
               .inner
-                %h3 Create user
-                %p Create new user
+                %h3= t 'dashboard.customers.heading'
+                %p= t 'dashboard.customers.paragraph'
               .icon
                 %i.ion.ion-bag
               .small-box-footer
                 %i.fa.fa-arrow-circle-right
-                  Go and create new user
+                  = t 'dashboard.customers.action'
+
+          .col-lg-4.col-md-4
+            %a.small-box.bg-fuchsia{href: customers_path(filter: {has_unresolved_request: 'yes'})}
+              .inner
+                %h3= t 'dashboard.requests.heading'
+                %p= t 'dashboard.requests.paragraph'
+              .icon
+                %i.ion.ion-bag
+              .small-box-footer
+                %i.fa.fa-arrow-circle-right
+                  = t 'dashboard.requests.action'

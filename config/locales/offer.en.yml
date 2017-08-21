@@ -1,0 +1,17 @@
+en:
+  offer:
+    edit:
+      title: "Edit offer"
+    new:
+      title: "New offer"
+    index:
+      title: "Offers"
+    form:
+      create: "Create offer"
+
+  activerecord:
+    attributes:
+      offer:
+        id: "Offer"
+        date: "Offer date"
+        offer_files: "Offer attachments"

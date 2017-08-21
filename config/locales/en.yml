@@ -27,6 +27,8 @@ en:
       success: "Successfully updated"
     create:
       success: "Successfully created"
+    destroy:
+      success: "Successfully deleted"
     save: "Save"
     show: "Show"
     new: "New"

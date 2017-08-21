@@ -22,7 +22,7 @@ class FileUploader < CarrierWave::Uploader::Base
     return unless original_filename
 
     extension = File.extname(original_filename)
-    name = File.basena(original_filename, extension)
+    name = File.basename(original_filename, extension)
 
     "#{Time.current.to_i.to_s}-#{name.parametrize}#{extension}"
   end
@@ -30,13 +30,11 @@ class FileUploader < CarrierWave::Uploader::Base
   def save_file_attributes
     return unless file && model
 
-    model.size = file.size
-
     original_filename = file.respond_to?(:original_filename) ? file.original_filename : nil
 
     return unless original_filename
 
     model.extension = File.extname(original_filename)
-    model.name = File.basename(original_filename, model.extension)
+    model.original_filename = File.basename(original_filename, model.extension)
   end
 end

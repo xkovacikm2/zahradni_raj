@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :customers
+  resources :offers, only: [:new, :create, :destroy]
 end

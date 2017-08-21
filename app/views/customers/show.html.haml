@@ -5,41 +5,46 @@
     .box.box-primary
       .box-header.with-border
         %h3.box-title= t 'customer.form.general'
+        .box-tools
+          = icon_link_to 'edit', t('resources.edit'), edit_customer_path(id: @customer.id), class: 'btn btn-primary btn-sm'
+          = icon_link_to 'plus', t('resources.new'), new_customer_path, class: 'btn btn-default btn-sm'
+          = icon_link_to 'list', t('resources.list'), customers_path, class: 'btn btn-default btn-sm'
+
       .box-body
         %dl.dl-horizontal.dl-details
           %dt= t 'activerecord.attributes.customer.name'
-          %dt= @customer.name
+          %dd= @customer.name
 
           %dt= t 'activerecord.attributes.customer.surname'
-          %dt= @customer.surname
+          %dd= @customer.surname
 
           - unless @customer.company.blank?
             %dt= t 'activerecord.attributes.customer.company'
-            %dt= @customer.company
+            %dd= @customer.company
 
             %dt= t 'activerecord.attributes.customer.ico'
-            %dt= @customer.ico
+            %dd= @customer.ico
 
             %dt= t 'activerecord.attributes.customer.dic'
-            %dt= @customer.dic
+            %dd= @customer.dic
 
           %dt= t 'activerecord.attributes.customer.recruitment_center_id'
-          %dt= @customer.recruitment_center.name
+          %dd= @customer.recruitment_center.name
 
           %dt= t 'activerecord.attributes.customer.country_id'
-          %dt= @customer.country.name
+          %dd= @customer.country.name
 
           %dt= t 'activerecord.attributes.customer.region_id'
-          %dt= @customer.region.name
+          %dd= @customer.region.name
 
           %dt= t 'activerecord.attributes.customer.address'
-          %dt= @customer.address
+          %dd= @customer.address
 
           %dt= t 'activerecord.attributes.customer.phone'
-          %dt= @customer.phone
+          %dd= @customer.phone
 
           %dt= t 'activerecord.attributes.customer.note'
-          %dt= @customer.note
+          %dd= @customer.note
 
   .col-md-6
     .box
@@ -47,28 +52,31 @@
         %h3.box-title= t 'customer.show.requests_orders'
       - @customer.requests.each do |request|
         .box-body
-          %table.table.table-condensed.table-bordered.table-hover
-            %thead
-              %th= t 'activerecord.attributes.equipment.code'
-              %th= t 'activerecord.attributes.equipment.name'
-              %th= t 'activerecord.attributes.equipment.serial_number'
-            %tbody
-              - @asset.equipments.each do |equipment|
-                %tr
-                  %td= equipment.code
-                  %td= equipment.name
-                  %td= equipment.serial_number
+          %dl.dl-horizontal.dl-details
+            %dt= t 'activerecord.attributes.request.date'
+            %dd= request.date
 
-    .box
-      .box-header.with-border
-        %h3.box-title= t 'asset.form.insurance'
-      .box-body
-        %dl.dl-horizontal.dl-details
-          %dt= t('activerecord.attributes.asset.is_insured')
-          %dd= @asset.is_insured ? t('yes') : t('no')
+            %dt= t 'activerecord.attributes.request.request_categories'
+            %dd
+              - request.categories.each do |c|
+                %span.label.label-success=  c.name
 
-          %dt= t('activerecord.attributes.asset.insurance_agreement_number')
-          %dd= @asset.insurance_agreement_number
+            - offer = request.offer
+            - if offer.nil?
+              %dt= t 'offer.form.create'
+              %dd= icon_link_to 'plus', t('resources.new'), new_offer_path, class: 'btn btn-primary btn-sm'
+            - else
+              %dt= t 'activerecord.attributes.offer.date'
+              %dd= offer.date
 
-          %dt= t('activerecord.attributes.asset.insurance_base_value')
-          %dd= ln @asset.insurance_base_value
+          - unless offer.nil?
+            %table.table.table-condensed.table-bordered.table-hover
+              %thead
+                %th= t 'activerecord.attributes.offer_file.original_filename'
+                %th
+              %tbody
+                - offer.offer_files do |file|
+                  %tr
+                    %td= file.public_name
+                    %td.rowlink-skip.text-right
+                      = icon_link_to 'times', t('resources.delete'), file, :method => :delete, :data => { :confirm => t('resources.confirm_deletion') }, class: 'btn btn-danger btn-xs'

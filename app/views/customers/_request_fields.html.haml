@@ -1,3 +1,5 @@
 = f.link_to_remove t('resources.delete'), class: 'btn btn-danger btn-xs pull-right'
 = f.text_field :date, {data: {provider: :datepicker}}
 = f.collection_select :request_categories, RequestCategory.all, :id, :name, {}, multiple: true
+
+%hr

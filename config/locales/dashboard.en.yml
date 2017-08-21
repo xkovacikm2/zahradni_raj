@@ -3,3 +3,13 @@ en:
     home:
       title: "Dashboard"
     welcome: "Welcome to Zahradní ráj administration"
+
+    customers:
+      heading: "New customer"
+      paragraph: "Create new customer"
+      action: "Go and create new customer"
+
+    requests:
+      heading: "Unresolved requests"
+      paragraph: "Show unresolved requests"
+      action: "Go and show unresolved requests"

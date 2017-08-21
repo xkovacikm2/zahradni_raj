@@ -30,3 +30,4 @@ en:
         recruitment_center_id: "Recruitment center"
         country_id: "Country"
         region_id: "Region"
+        has_unresolved_request: "Has unresolved request"
