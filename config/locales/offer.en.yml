@@ -7,7 +7,9 @@ en:
     index:
       title: "Offers"
     form:
+      title: "Offer form"
       create: "Create offer"
+      add_file: "Add file"
 
   activerecord:
     attributes:

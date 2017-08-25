@@ -1,0 +1,27 @@
+= bootstrap_nested_form_for @offer, layout: :horizontal, label_col: 'col-sm-3', control_col: 'col-sm-8' do |f|
+  = f.alert_message t('views.forms.alert_message')
+
+  .row
+    .col-md-6
+      .box.box-primary
+        .box-header.with-border
+          %h3.box-title= t 'offer.form.title'
+        .box-body
+          = f.hidden_field :request_id
+          = f.text_field :date, {data: {provider: :datepicker}}
+
+      .box
+        .box-header.with-border
+          %h3.box-title= t 'activerecord.attributes.offer.offer_files'
+        .box-body
+          = f.fields_for :offer_files, label_col: 'col-sm-3', control_col: 'col-sm-8' do |q|
+            = render 'offers/offer_file_fields', f: q
+
+          = f.link_to_add t('offer.form.add_file'), :offer_files, class: 'btn btn-default btn-sm col-sm-offset-5'
+
+
+      .box.box-success
+        .box-body
+          .row
+            .col-md-6.col-md-offset-3
+              = f.submit t('resources.save'), class: 'btn btn-primary btn-block'

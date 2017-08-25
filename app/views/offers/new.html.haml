@@ -1,0 +1,10 @@
+- @page_title = t 'offer.new.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'info-circle',t('resources.show'), @offer.customer, class: 'btn btn-primary btn-sm'
+
+  .box-body
+    = render 'form'

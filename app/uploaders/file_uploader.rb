@@ -24,7 +24,7 @@ class FileUploader < CarrierWave::Uploader::Base
     extension = File.extname(original_filename)
     name = File.basename(original_filename, extension)
 
-    "#{Time.current.to_i.to_s}-#{name.parametrize}#{extension}"
+    "#{Time.current.to_i.to_s}-#{name.parameterize}#{extension}"
   end
 
   def save_file_attributes

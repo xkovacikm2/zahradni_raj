@@ -6,7 +6,7 @@ en:
       title: "New customer"
     show:
       title: "Customer %{name} %{surname}"
-      requests_orders: "Requests and orders overview"
+      requests_offers: "Requests and offers overview"
     index:
       title: "Customers"
     form:
