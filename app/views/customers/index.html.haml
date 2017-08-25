@@ -9,14 +9,16 @@
   .box-body
     = search_form Customer,{name: {},
                             surname: {},
-                            company: {},
-                            ico: {},
-                            dic: {},
+                            email: {},
                             country_id: {options: search_options(Country, :name)},
                             region_id: {options: search_options(Region, :name)},
+                            has_unresolved_request: {type: :boolean},
+                            request_date: {from_to: true, type: :date},
+                            offer_date: {from_to: true, type: :date},
                             recruitment_center_id: {options: search_options(RecruitmentCenter, :name)},
-                            email: {},
-                            has_unresolved_request: {type: :boolean}}
+                            company: {},
+                            ico: {},
+                            dic: {}}
 
     %small.pull-right.text-muted
       = t 'resources.count', count: number_with_delimiter(@customers.total_count)
@@ -29,10 +31,9 @@
         %tr
           %th= t('activerecord.attributes.customer.name')
           %th= t('activerecord.attributes.customer.surname')
+          %th= t('activerecord.attributes.customer.has_unresolved_request')
           %th= t('activerecord.attributes.customer.recruitment_center_id')
-          %th= t('activerecord.attributes.customer.country_id')
           %th= t('activerecord.attributes.customer.region_id')
-          %th= t('activerecord.attributes.customer.address')
           %th= t('activerecord.attributes.customer.company')
           %th
 
@@ -41,13 +42,12 @@
           %tr
             %td{colspan: 8}= t 'resources.no_items'
         - @customers.each do |customer|
-          %tr
+          %tr{ class: "#{customer.unresolved_requests? ? 'danger' : 'success'}" }
             %td= customer.name
             %td= customer.surname
+            %td= customer.unresolved_requests? ? t('yes') : t('no')
             %td= customer.recruitment_center.name
-            %td= customer.country.name
             %td= customer.region.name
-            %td= customer.address
             %td= customer.company
 
             %td.rowlink-skip.text-right

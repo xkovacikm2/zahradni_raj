@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:edit, :update, :destroy]
 
   def index
-    @customers = Customer.includes(:recruitment_center, :country, :region).filter_by(params[:filter]).page params[:page]
+    @customers = Customer.includes(:recruitment_center, :region, :requests).filter_by(params[:filter]).page params[:page]
   end
 
   def show
