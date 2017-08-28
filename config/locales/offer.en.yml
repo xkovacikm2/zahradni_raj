@@ -17,3 +17,4 @@ en:
         id: "Offer"
         date: "Offer date"
         offer_files: "Offer attachments"
+        internal_id: "Internal id"

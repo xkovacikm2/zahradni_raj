@@ -9,6 +9,7 @@
         .box-body
           = f.hidden_field :request_id
           = f.text_field :date, {data: {provider: :datepicker}}
+          = f.number_field :internal_id, step: 1
 
       .box
         .box-header.with-border

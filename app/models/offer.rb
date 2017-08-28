@@ -7,5 +7,6 @@ class Offer < ApplicationRecord
 
   delegate :customer, to: :request
 
-  validates_presence_of :request_id
+  validates_presence_of :request_id, :internal_id
+  validates_uniqueness_of :internal_id
 end

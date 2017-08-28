@@ -17,3 +17,4 @@ cs:
         id: "nabídka"
         date: "datum nabídky"
         offer_files: "přilohy nabídky"
+        internal_id: "Identifikátor"
