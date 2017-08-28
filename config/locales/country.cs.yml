@@ -1,0 +1,16 @@
+cs:
+  country:
+    edit:
+      title: "změna země"
+    new:
+      title: "nová země"
+    index:
+      title: "země"
+    form:
+      create: "vytvořit zemi"
+
+  activerecord:
+    attributes:
+      country:
+        id: "země"
+        name: "jméno"

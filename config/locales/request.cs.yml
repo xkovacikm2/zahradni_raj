@@ -1,0 +1,15 @@
+cs:
+  request:
+    edit:
+      title: "úprava poptávky"
+    new:
+      title: "Nová poptávka"
+    index:
+      title: "Poptávka"
+
+  activerecord:
+    attributes:
+      request:
+        id: "Poptávka"
+        date: "datum poptávky"
+        request_categories: "kategorie poptávek"

@@ -1,0 +1,19 @@
+cs:
+  offer:
+    edit:
+      title: "úprava nabídky"
+    new:
+      title: "nová nabídka"
+    index:
+      title: "nabídka"
+    form:
+      title: "formulář nabídky"
+      create: "vytvořit nabídku"
+      add_file: "přidat soubor"
+
+  activerecord:
+    attributes:
+      offer:
+        id: "nabídka"
+        date: "datum nabídky"
+        offer_files: "přilohy nabídky"

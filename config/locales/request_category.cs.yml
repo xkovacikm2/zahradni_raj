@@ -1,0 +1,16 @@
+cs:
+  request_category:
+    edit:
+      title: "úprava kategorie poptávky"
+    new:
+      title: "nová kategorie poptávky"
+    index:
+      title: "kategorie poptávky"
+    form:
+      create: "vytvořit kategorii poptávky"
+
+  activerecord:
+    attributes:
+      request_category:
+        id: "kategorie poptávky"
+        name: "Jméno"

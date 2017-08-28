@@ -1,0 +1,33 @@
+cs:
+  customer:
+    edit:
+      title: "Úprava zákazníka"
+    new:
+      title: "nový zákazník"
+    show:
+      title: "zákazník %{name} %{surname}"
+      requests_offers: "poptávky a nabídky"
+    index:
+      title: "zákazník"
+    form:
+      add_request: "přidat poptávku"
+      general: "info o zákazníkovi"
+      requests: "poptávka"
+
+  activerecord:
+    attributes:
+      customer:
+        id: "zákazník"
+        email: "Email"
+        name: "jméno"
+        surname: "příjmení"
+        company: "firma"
+        ico: "ICO"
+        dic: "DIC"
+        address: "adresa"
+        phone: "telefon"
+        note: "poznámka"
+        recruitment_center_id: "středisko"
+        country_id: "země"
+        region_id: "kraj"
+        has_unresolved_request: "žádost bez nabídky"

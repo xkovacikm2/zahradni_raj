@@ -1,0 +1,15 @@
+﻿cs:
+  dashboard:
+    home:
+      title: "hlavní panel"
+    welcome: "vítejte v Zahradním ráji"
+
+    customers:
+      heading: "nový zákazník"
+      paragraph: "vytvořit nového zákazníka"
+      action: "Jdi a vytvoř nového zákazníka"
+
+    requests:
+      heading: "nedořešené poptávky"
+      paragraph: "zobrazit nedořešené poptávky"
+      action: "jdi a zobraz nedořešené poptávky"

@@ -1,0 +1,17 @@
+cs:
+  region:
+    edit:
+      title: "úprava kraje"
+    new:
+      title: "nový kraj"
+    index:
+      title: "Kraje"
+    form:
+      create: "vytvořit kraj"
+
+  activerecord:
+    attributes:
+      region:
+        id: "Kraje"
+        name: "Jméno"
+        country_id: "Země"

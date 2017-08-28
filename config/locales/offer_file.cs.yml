@@ -1,0 +1,14 @@
+en:
+  offer_file:
+    edit:
+      title: "úprava nabídky souboru"
+    new:
+      title: "nová nabídka soubor"
+    index:
+      title: "Nabídky soubor"
+
+  activerecord:
+    attributes:
+      offer_file:
+        id: "Nabídky soubor"
+        original_filename: "nahraný soubor"

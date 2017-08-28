@@ -1,0 +1,44 @@
+﻿cs:
+  all: 'vše'
+  yes: 'ano'
+  no: 'ne'
+
+  toggle_navigation: "přepnout navigaci"
+  application_name: "Zahradní ráj"
+
+  navigation:
+    my_profile: "můj profil"
+    dashboard: "přístrojová deska"
+
+  views:
+    forms:
+      alert_message: "Upravte chyby níže"
+      search: "hledat"
+      clear_search: "vymazat vyhledávání"
+    session:
+      sign_out: "odhlásit"
+      sign_in: "přihlásit"
+      email: "email uživatele"
+      password: "uživatelské heslo"
+      message: "prosím přihlaste se"
+
+  resources:
+    update:
+      success: "úspěšně aktualizováno"
+    create:
+      success: "úspěšně vytvořeno"
+    destroy:
+      success: "úspěšně vymazáno"
+    save: "uložit"
+    show: "ukaž"
+    new: "nový"
+    list: "list"
+    count: "spočítat %{count}"
+    pages: "stránky %{count}"
+    no_items: "žádné složky"
+    edit: "upravit"
+    delete: "vymazat"
+    confirm_deletion: "opravdu smazat?"
+    details: "Detaily"
+    created_at: "vytvořit v"
+

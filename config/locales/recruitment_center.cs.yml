@@ -1,0 +1,16 @@
+cs:
+  recruitment_center:
+    edit:
+      title: "úprava střediska"
+    new:
+      title: "nové středisko"
+    index:
+      title: "Středisko"
+    form:
+      create: "Vytvořit středisko"
+
+  activerecord:
+    attributes:
+      recruitment_center:
+        id: "Středisko"
+        name: "Jméno"
