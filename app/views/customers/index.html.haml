@@ -48,6 +48,7 @@
         - @customers.each do |customer|
           %tr{ class: "#{customer.unresolved_requests? ? 'danger' : 'success'}" }
             %td= customer.id
+            %td= customer.customer_status&.name
             %td= customer.email
             %td= customer.name
             %td= customer.surname
