@@ -1,14 +1,14 @@
-en:
+cs:
   offer_file:
     edit:
-      title: "úprava nabídky souboru"
+      title: "Ãºprava nabÃ­dky souboru"
     new:
-      title: "nová nabídka soubor"
+      title: "novÃ¡ nabÃ­dka soubor"
     index:
-      title: "Nabídky soubor"
+      title: "NabÃ­dky soubor"
 
   activerecord:
     attributes:
       offer_file:
-        id: "Nabídky soubor"
-        original_filename: "nahranı soubor"
+        id: "NabÃ­dky soubor"
+        original_filename: "nahranÃ½ soubor"
