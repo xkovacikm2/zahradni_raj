@@ -33,6 +33,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit :date, :internal_id, :request_id, offer_files_attributes: [:_destroy, :id, :stored_filename]
+    params.require(:offer).permit :date, :internal_id, :request_id, :contact_date, offer_files_attributes: [:_destroy, :id, :stored_filename]
   end
 end

@@ -89,6 +89,8 @@
                   .col-sm-3
                     = icon_link_to 'edit', '', edit_offer_path(id: offer.id), class: 'btn btn-primary btn-xs'
                     = icon_link_to 'times', '', offer, :method => :delete, :data => { :confirm => t('resources.confirm_deletion') }, class: 'btn btn-danger btn-xs'
+              %dt= t 'activerecord.attributes.offer.contact_date'
+              %dd= offer.contact_date
               %dt= t 'activerecord.attributes.offer.internal_id'
               %dd= offer.internal_id
 
