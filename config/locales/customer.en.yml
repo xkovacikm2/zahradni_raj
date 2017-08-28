@@ -34,3 +34,4 @@ en:
         request_date: "Date of request"
         contact_date: "Date of contact"
         offer_date: "Date of offer"
+        customer_status_id: "Customer's status"

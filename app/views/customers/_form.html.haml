@@ -14,6 +14,7 @@
           = f.text_field :company
           = f.text_field :ico
           = f.text_field :dic
+          = f.collection_select :customer_status_id, CustomerStatus.all, :id, :name
           = f.collection_select :recruitment_center_id, RecruitmentCenter.all, :id, :name
           = f.collection_select :country_id, countries, :id, :name
           = f.collection_select :region_id, Region.all, :id, :name, {}, data: {countries: countries.map{ |c| [c.id, c.regions.map{|r| {id: r.id, text: r.name}}]}.to_h}

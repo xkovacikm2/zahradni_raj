@@ -12,6 +12,9 @@
 
       .box-body
         %dl.dl-horizontal.dl-details
+          %dt= t 'activerecord.attributes.customer.customer_status_id'
+          %dd= @customer.customer_status&.name
+
           %dt= t 'activerecord.attributes.customer.email'
           %dd= @customer.email
 

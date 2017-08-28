@@ -41,7 +41,7 @@ class CustomersController < ApplicationController
 
   def customer_params
     params.require(:customer).permit :name, :surname, :company, :ico, :dic, :address, :email, :phone, :note, :country_id,
-                                     :recruitment_center_id, :region_id,
+                                     :recruitment_center_id, :region_id, :customer_status_id,
                                      requests_attributes: [:_destroy, :id, :date, request_categories: []]
   end
 end

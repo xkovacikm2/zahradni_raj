@@ -17,7 +17,7 @@ cs:
   activerecord:
     attributes:
       customer:
-        id: "zákazníke id"
+        id: "zákaznícke id"
         email: "Email"
         name: "jméno"
         surname: "příjmení"
@@ -34,3 +34,4 @@ cs:
         request_date: "Dátum poptávky"
         contact_date: "Dátum kontaktu"
         offer_date: "Dátum ponuky"
+        customer_status_id: "Stav zákazníka"

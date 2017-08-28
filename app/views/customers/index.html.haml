@@ -32,10 +32,10 @@
       %thead
         %tr
           %th= t('activerecord.attributes.customer.id')
+          %th= t('activerecord.attributes.customer.customer_status_id')
           %th= t('activerecord.attributes.customer.email')
           %th= t('activerecord.attributes.customer.name')
           %th= t('activerecord.attributes.customer.surname')
-          %th= t('activerecord.attributes.customer.has_unresolved_request')
           %th= t('activerecord.attributes.customer.recruitment_center_id')
           %th= t('activerecord.attributes.customer.region_id')
           %th= t('activerecord.attributes.customer.company')
@@ -51,7 +51,6 @@
             %td= customer.email
             %td= customer.name
             %td= customer.surname
-            %td= customer.unresolved_requests? ? t('yes') : t('no')
             %td= customer.recruitment_center&.name
             %td= customer.region&.name
             %td= customer.company
