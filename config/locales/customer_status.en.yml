@@ -1,0 +1,16 @@
+en:
+  customer_status:
+    edit:
+      title: "Edit customer's status"
+    new:
+      title: "New customer's status"
+    index:
+      title: "Customers statuses"
+    form:
+      create: "Create customer's status"
+
+  activerecord:
+    attributes:
+      customer_status:
+        id: "Customer's status"
+        name: "Name"

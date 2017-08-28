@@ -17,7 +17,7 @@ cs:
   activerecord:
     attributes:
       customer:
-        id: "zákazník"
+        id: "zákazníke id"
         email: "Email"
         name: "jméno"
         surname: "příjmení"
@@ -31,3 +31,6 @@ cs:
         country_id: "země"
         region_id: "kraj"
         has_unresolved_request: "žádost bez nabídky"
+        request_date: "Dátum poptávky"
+        contact_date: "Dátum kontaktu"
+        offer_date: "Dátum ponuky"

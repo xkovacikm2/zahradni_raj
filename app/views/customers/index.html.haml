@@ -10,9 +10,11 @@
     = search_form Customer,{name: {},
                             surname: {},
                             email: {},
+                            customer_status_id: {options: search_options(CustomerStatus, :name)},
                             country_id: {options: search_options(Country, :name)},
                             region_id: {options: search_options(Region, :name)},
                             has_unresolved_request: {type: :boolean},
+                            contact_date: {from_to: true, type: :date},
                             request_date: {from_to: true, type: :date},
                             offer_date: {from_to: true, type: :date},
                             recruitment_center_id: {options: search_options(RecruitmentCenter, :name)},
@@ -29,6 +31,8 @@
     %table.table.table-hover
       %thead
         %tr
+          %th= t('activerecord.attributes.customer.id')
+          %th= t('activerecord.attributes.customer.email')
           %th= t('activerecord.attributes.customer.name')
           %th= t('activerecord.attributes.customer.surname')
           %th= t('activerecord.attributes.customer.has_unresolved_request')
@@ -43,11 +47,13 @@
             %td{colspan: 8}= t 'resources.no_items'
         - @customers.each do |customer|
           %tr{ class: "#{customer.unresolved_requests? ? 'danger' : 'success'}" }
+            %td= customer.id
+            %td= customer.email
             %td= customer.name
             %td= customer.surname
             %td= customer.unresolved_requests? ? t('yes') : t('no')
-            %td= customer.recruitment_center.name
-            %td= customer.region.name
+            %td= customer.recruitment_center&.name
+            %td= customer.region&.name
             %td= customer.company
 
             %td.rowlink-skip.text-right

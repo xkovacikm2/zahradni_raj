@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828195743) do
+ActiveRecord::Schema.define(version: 20170828203439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 20170828195743) do
   create_table "countries", force: :cascade do |t|
     t.string "name", null: false
     t.index ["name"], name: "index_countries_on_name", using: :btree
+  end
+
+  create_table "customer_statuses", force: :cascade do |t|
+    t.string "name", null: false
+    t.index ["name"], name: "index_customer_statuses_on_name", using: :btree
   end
 
   create_table "customers", force: :cascade do |t|
@@ -35,7 +40,9 @@ ActiveRecord::Schema.define(version: 20170828195743) do
     t.integer  "region_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "customer_status_id"
     t.index ["country_id"], name: "index_customers_on_country_id", using: :btree
+    t.index ["customer_status_id"], name: "index_customers_on_customer_status_id", using: :btree
     t.index ["recruitment_center_id"], name: "index_customers_on_recruitment_center_id", using: :btree
     t.index ["region_id"], name: "index_customers_on_region_id", using: :btree
   end
@@ -104,6 +111,7 @@ ActiveRecord::Schema.define(version: 20170828195743) do
   end
 
   add_foreign_key "customers", "countries"
+  add_foreign_key "customers", "customer_statuses"
   add_foreign_key "customers", "recruitment_centers"
   add_foreign_key "customers", "regions"
   add_foreign_key "offer_files", "offers"

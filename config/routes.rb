@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :regions, except: :show
   resources :request_categories, except: :show
   resources :requests, except: [:show, :index]
+  resources :customer_statuses, except: :show
 end

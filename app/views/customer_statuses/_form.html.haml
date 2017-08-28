@@ -1,0 +1,7 @@
+= bootstrap_nested_form_for @customer_status, layout: :horizontal, label_col: 'col-sm-3', control_col: 'col-sm-5' do |f|
+  = f.alert_message t 'views.forms.alert_message'
+
+  = f.text_field :name
+
+  = f.form_group do
+    = f.submit t('resources.save'), class: 'btn btn-primary'

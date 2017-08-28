@@ -17,7 +17,7 @@ en:
   activerecord:
     attributes:
       customer:
-        id: "Customer"
+        id: "Customer's id"
         email: "Email"
         name: "Name"
         surname: "Surname"
@@ -31,3 +31,6 @@ en:
         country_id: "Country"
         region_id: "Region"
         has_unresolved_request: "Has unresolved request"
+        request_date: "Date of request"
+        contact_date: "Date of contact"
+        offer_date: "Date of offer"

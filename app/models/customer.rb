@@ -4,6 +4,7 @@ class Customer < ApplicationRecord
   belongs_to :recruitment_center, optional: true
   belongs_to :country, optional: true
   belongs_to :region, optional: true
+  belongs_to :customer_status
 
   has_many :requests, inverse_of: :customer, dependent: :destroy
 
@@ -28,6 +29,14 @@ class Customer < ApplicationRecord
     else
       scope.left_joins(requests: :offer).group('customers.id').having('COUNT(requests.*) = COUNT(offers.*)')
     end
+  end
+
+  def self.filter_by_contact_date_from(scope, value)
+    scope.left_joins(requests: :offer).where('offer.contact_date >= ?', Date.parse(value)).distinct
+  end
+
+  def self.filter_by_contact_date_to(scope, value)
+    scope.left_joins(requests: :offer).where('requests.contact_date <= ?', Date.parse(value)).distinct
   end
 
   def self.filter_by_request_date_from(scope, value)

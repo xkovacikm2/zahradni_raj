@@ -1,0 +1,16 @@
+cs:
+  customer_status:
+    edit:
+      title: "změna stavu zákazníka"
+    new:
+      title: "nový stav zákazníka"
+    index:
+      title: "Stavy zákazníkov"
+    form:
+      create: "vytvořit zákaznícky stav"
+
+  activerecord:
+    attributes:
+      customer_status:
+        id: "Stav zákazníka"
+        name: "Název"
