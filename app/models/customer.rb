@@ -1,15 +1,17 @@
 class Customer < ApplicationRecord
   include Filterable
 
-  belongs_to :recruitment_center
-  belongs_to :country
-  belongs_to :region
+  belongs_to :recruitment_center, optional: true
+  belongs_to :country, optional: true
+  belongs_to :region, optional: true
 
   has_many :requests, inverse_of: :customer, dependent: :destroy
 
   accepts_nested_attributes_for :requests
 
-  validates_presence_of :name, :surname, :address, :recruitment_center_id, :country_id, :region_id
+  validates_format_of :email, :with => Devise::email_regexp
+  validates_presence_of :email
+  validates_uniqueness_of :email
 
   def offers
     self.requests.map { |request| request.offer }

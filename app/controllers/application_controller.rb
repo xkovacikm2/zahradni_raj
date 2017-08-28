@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :set_default_locale
 
   def set_default_locale
-    I18n.default_locale = :cs
+    I18n.locale = :cs
   end
 end

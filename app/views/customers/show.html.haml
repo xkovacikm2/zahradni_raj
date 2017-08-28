@@ -12,6 +12,9 @@
 
       .box-body
         %dl.dl-horizontal.dl-details
+          %dt= t 'activerecord.attributes.customer.email'
+          %dd= @customer.email
+
           %dt= t 'activerecord.attributes.customer.name'
           %dd= @customer.name
 
@@ -29,13 +32,13 @@
             %dd= @customer.dic
 
           %dt= t 'activerecord.attributes.customer.recruitment_center_id'
-          %dd= @customer.recruitment_center.name
+          %dd= @customer.recruitment_center&.name
 
           %dt= t 'activerecord.attributes.customer.country_id'
-          %dd= @customer.country.name
+          %dd= @customer.country&.name
 
           %dt= t 'activerecord.attributes.customer.region_id'
-          %dd= @customer.region.name
+          %dd= @customer.region&.name
 
           %dt= t 'activerecord.attributes.customer.address'
           %dd= @customer.address
