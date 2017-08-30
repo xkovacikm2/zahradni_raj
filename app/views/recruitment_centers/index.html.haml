@@ -15,7 +15,7 @@
       = t 'resources.pages', count: number_with_delimiter(@centers.total_pages)
     = paginate @centers
 
-    %table.table.table-hover
+    %table.table.table-hover.table-sortable
       %thead
         %tr
           %th= t('activerecord.attributes.customer.name')

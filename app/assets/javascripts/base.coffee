@@ -4,6 +4,7 @@ class App.Base
     if (window.jQuery) then RailsScript.setClearEventHandlers() # clearing application event handlers only possible with jQuery
     Utility.Utility.initInputs()
     $(document).on 'nested:fieldAdded', (e) -> Utility.Utility.initInputs()
+    $('.table-sortable').tablesorter()
     return this
 
 

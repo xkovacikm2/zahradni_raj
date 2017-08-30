@@ -18,6 +18,10 @@ class Customer < ApplicationRecord
     self.requests.map { |request| request.offer }
   end
 
+  def contact_date
+    self.offers.compact.select{ |offer| offer.contact_date >= Date.current }.sort_by(&:contact_date).first&.contact_date
+  end
+
   def unresolved_requests?
     @unresolved = self.requests.any? { |request| request.offer.nil? } if @unresolved.nil?
     @unresolved

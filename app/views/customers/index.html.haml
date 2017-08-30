@@ -28,17 +28,17 @@
       = t 'resources.pages', count: number_with_delimiter(@customers.total_pages)
     = paginate @customers
 
-    %table.table.table-hover
+    %table.table.table-hover.table-sortable
       %thead
         %tr
           %th= t('activerecord.attributes.customer.id')
+          %th= t('activerecord.attributes.customer.contact_date')
           %th= t('activerecord.attributes.customer.customer_status_id')
           %th= t('activerecord.attributes.customer.email')
           %th= t('activerecord.attributes.customer.name')
           %th= t('activerecord.attributes.customer.surname')
           %th= t('activerecord.attributes.customer.recruitment_center_id')
           %th= t('activerecord.attributes.customer.region_id')
-          %th= t('activerecord.attributes.customer.company')
           %th
 
       %tbody.rowlink
@@ -49,6 +49,7 @@
           - style = customer&.customer_status&.color&.present? ? "background-color: #{customer.customer_status.color}" : ''
           %tr{style: style}
             %td= customer.id
+            %td= customer.contact_date
             %td= customer.customer_status&.name
             %td= customer.email
             %td= customer.name
