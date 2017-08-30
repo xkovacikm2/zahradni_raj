@@ -19,6 +19,7 @@
       %thead
         %tr
           %th= t('activerecord.attributes.customer_status.name')
+          %th= t('activerecord.attributes.customer_status.color')
           %th
 
       %tbody.rowlink
@@ -26,8 +27,10 @@
           %tr
             %td{colspan: 3}= t 'resources.no_items'
         - @customer_statuses.each do |status|
+          - style = status.color ? "background-color: #{status.color}" : ''
           %tr
             %td= status.name
+            %td{style: style}
 
             %td.rowlink-skip.text-right
               = icon_link_to 'edit', t('resources.edit'), edit_customer_status_path(status), class: 'btn btn-default btn-xs'

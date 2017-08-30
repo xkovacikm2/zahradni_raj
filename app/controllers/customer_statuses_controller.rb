@@ -37,6 +37,6 @@ class CustomerStatusesController < ApplicationController
   end
 
   def customer_status_params
-    params.require(:customer_status).permit :name
+    params.require(:customer_status).permit :name, :color
   end
 end

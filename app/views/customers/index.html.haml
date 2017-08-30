@@ -46,7 +46,8 @@
           %tr
             %td{colspan: 8}= t 'resources.no_items'
         - @customers.each do |customer|
-          %tr{ class: "#{customer.unresolved_requests? ? 'danger' : 'success'}" }
+          - style = customer&.customer_status&.color&.present? ? "background-color: #{customer.customer_status.color}" : ''
+          %tr{style: style}
             %td= customer.id
             %td= customer.customer_status&.name
             %td= customer.email

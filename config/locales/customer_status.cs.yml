@@ -14,3 +14,4 @@ cs:
       customer_status:
         id: "Stav zákazníka"
         name: "Název"
+        color: "Barva"
