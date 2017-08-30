@@ -59,12 +59,12 @@ ActiveRecord::Schema.define(version: 20170830173656) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.date     "date",                                null: false
-    t.integer  "request_id",                          null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.date     "date"
+    t.integer  "request_id",   null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "internal_id"
-    t.date     "contact_date", default: '2017-08-30', null: false
+    t.date     "contact_date"
     t.index ["request_id"], name: "index_offers_on_request_id", using: :btree
   end
 
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20170830173656) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.date     "date",                            null: false
+    t.date     "date"
     t.integer  "customer_id"
     t.integer  "request_categories", default: [],              array: true
     t.datetime "created_at",                      null: false

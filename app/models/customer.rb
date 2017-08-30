@@ -4,7 +4,7 @@ class Customer < ApplicationRecord
   belongs_to :recruitment_center, optional: true
   belongs_to :country, optional: true
   belongs_to :region, optional: true
-  belongs_to :customer_status
+  belongs_to :customer_status, optional: true
 
   has_many :requests, inverse_of: :customer, dependent: :destroy
 

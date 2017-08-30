@@ -8,7 +8,7 @@
 
   navigation:
     my_profile: "můj profil"
-    dashboard: "přístrojová deska"
+    dashboard: "Nástenka"
 
   views:
     forms:
@@ -33,7 +33,7 @@
     show: "ukaž"
     new: "nový"
     list: "list"
-    count: "spočítat %{count}"
+    count: "počet %{count}"
     pages: "stránky %{count}"
     no_items: "žádné složky"
     edit: "upravit"
