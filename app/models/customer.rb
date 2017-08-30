@@ -36,11 +36,11 @@ class Customer < ApplicationRecord
   end
 
   def self.filter_by_contact_date_from(scope, value)
-    scope.left_joins(requests: :offer).where('offer.contact_date >= ?', Date.parse(value)).distinct
+    scope.left_joins(requests: :offer).where('offers.contact_date >= ?', Date.parse(value)).distinct
   end
 
   def self.filter_by_contact_date_to(scope, value)
-    scope.left_joins(requests: :offer).where('requests.contact_date <= ?', Date.parse(value)).distinct
+    scope.left_joins(requests: :offer).where('offers.contact_date <= ?', Date.parse(value)).distinct
   end
 
   def self.filter_by_request_date_from(scope, value)
