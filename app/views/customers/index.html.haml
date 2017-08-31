@@ -38,7 +38,7 @@
           %th= t('activerecord.attributes.customer.name')
           %th= t('activerecord.attributes.customer.surname')
           %th= t('activerecord.attributes.customer.recruitment_center_id')
-          %th= t('activerecord.attributes.customer.region_id')
+          %th= t('activerecord.attributes.customer.country_id')
           %th
 
       %tbody.rowlink
@@ -55,7 +55,7 @@
             %td= customer.name
             %td= customer.surname
             %td= customer.recruitment_center&.name
-            %td= customer.region&.name
+            %td= customer.country&.name
             %td= customer.company
 
             %td.rowlink-skip.text-right
