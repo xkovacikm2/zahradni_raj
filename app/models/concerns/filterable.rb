@@ -88,7 +88,7 @@ module Filterable
       parameters = []
 
       values.to_s.split('|').each do |value|
-        conditions << "(#{name} ILIKE ?)"
+        conditions << "(UNACCENT(#{name}) ILIKE ?)"
         parameters << Utility.clean_like(value)
       end
 

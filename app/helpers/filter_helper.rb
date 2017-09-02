@@ -1,6 +1,6 @@
 module FilterHelper
   def search_form(model, fields = {}, options = {})
-    options[:advanced_search] ||= 5
+    options[:advanced_search] ||= 50
 
     html = '<div class="clearfix"></div><div class="filter"><form method="get" class="form-horizontal">'
 
