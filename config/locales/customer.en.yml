@@ -9,6 +9,8 @@ en:
       requests_offers: "Requests and offers overview"
     index:
       title: "Customers"
+    send_emails:
+      title: "Send email to customers"
     form:
       add_request: "Add request"
       general: "Customer information"
@@ -16,6 +18,9 @@ en:
 
   activerecord:
     attributes:
+      email:
+        subject: "Subject of message"
+        content: "Content of message"
       customer:
         id: "Customer's id"
         email: "Email"

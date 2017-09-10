@@ -29,6 +29,10 @@ en:
       success: "Successfully created"
     destroy:
       success: "Successfully deleted"
+    email:
+      delivered: "Emails prepared for delivery"
+      send: "Send emails"
+      confirm: "Are you sure?"
     save: "Save"
     show: "Show"
     new: "New"

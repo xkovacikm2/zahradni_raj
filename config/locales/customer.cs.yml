@@ -9,6 +9,8 @@ cs:
       requests_offers: "poptávky a nabídky"
     index:
       title: "zákazník"
+    send_emails:
+      title: "Poslat hromadný email"
     form:
       add_request: "přidat poptávku"
       general: "info o zákazníkovi"
@@ -16,6 +18,9 @@ cs:
 
   activerecord:
     attributes:
+      email:
+        subject: "Předmět správy"
+        content: "Obsah správy"
       customer:
         id: "zákaznícke id"
         email: "Email"

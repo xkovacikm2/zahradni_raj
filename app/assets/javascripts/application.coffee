@@ -18,5 +18,8 @@
 #= require bootstrap-datepicker/core
 #= require jquery_nested_form
 #= require jquery-tablesorter
+#= require bootstrap-wysihtml5
+#= require bootstrap-wysihtml5/locales/en-US
+#= require bootstrap-wysihtml5/locales/cs-CZ
 #= require rails_script
 #= require_tree .

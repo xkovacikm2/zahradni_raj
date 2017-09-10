@@ -33,6 +33,16 @@ class CustomersController < ApplicationController
     redirect_to customers_path, notice: t('resources.destroy.success')
   end
 
+  def write_emails
+  end
+
+  def send_emails
+    @customers = Customer.includes(:recruitment_center, :region, :requests).filter_by(params[:filter])
+    CustomerMailer.mass_emails(@customers, params[:content], params[:subject]).deliver_now
+
+    redirect_to customers_path, notice: t('resources.email.delivered')
+  end
+
   private
 
   def set_customer

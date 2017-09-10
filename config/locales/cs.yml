@@ -8,7 +8,7 @@
 
   navigation:
     my_profile: "můj profil"
-    dashboard: "Nástenka"
+    dashboard: "Nástěnka"
 
   views:
     forms:
@@ -29,6 +29,10 @@
       success: "úspěšně vytvořeno"
     destroy:
       success: "úspěšně vymazáno"
+    email:
+      delivered: "Naplánováno odesláni emailů"
+      send: "Odeslat správy"
+      confirm: "Jste si jistý?"
     save: "uložit"
     show: "ukaž"
     new: "nový"

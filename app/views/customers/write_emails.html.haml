@@ -1,0 +1,30 @@
+- @page_title = t 'customer.send_emails.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_customer_path, class: 'btn btn-primary btn-sm'
+
+  .box-body
+    = search_form Customer,{name: {},
+                            surname: {},
+                            email: {},
+                            customer_status_id: {options: search_options(CustomerStatus, :name)},
+                            country_id: {options: search_options(Country, :name)},
+                            region_id: {options: search_options(Region, :name)},
+                            has_unresolved_request: {type: :boolean},
+                            contact_date: {from_to: true, type: :date},
+                            request_date: {from_to: true, type: :date},
+                            offer_date: {from_to: true, type: :date},
+                            recruitment_center_id: {options: search_options(RecruitmentCenter, :name)},
+                            company: {},
+                            ico: {},
+                            dic: {}}
+
+  .row
+    .col-md-6.col-md-offset-3
+      = bootstrap_form_tag url: send_emails_customers_path  do |f|
+        = f.text_field :subject, placeholder: t('activerecord.attributes.email.subject'), label: t('activerecord.attributes.email.subject')
+        = f.text_area :content, height: '600px', label: t('activerecord.attributes.email.content'), class: 'wysihtml5'
+        = f.submit t('resources.email.send'), class: 'btn btn-primary btn-block', :data => { :confirm => t('resources.email.confirm') }

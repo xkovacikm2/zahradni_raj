@@ -3,8 +3,14 @@ Rails.application.routes.draw do
 
   root 'dashboard#home'
 
+  resources :customers do
+    collection do
+      get 'write_emails', to: 'customers#write_emails'
+      post 'send_emails', to: 'customers#send_emails'
+    end
+  end
+
   resources :users
-  resources :customers
   resources :offers, except: [:index, :show]
   resources :offer_files, only: :destroy
   resources :recruitment_centers, except: :show

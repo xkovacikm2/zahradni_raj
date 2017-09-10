@@ -5,7 +5,7 @@ cs:
     new:
       title: "nový stav zákazníka"
     index:
-      title: "Stavy zákazníkov"
+      title: "Stavy zákazníků"
     form:
       create: "vytvořit zákaznícky stav"
 
