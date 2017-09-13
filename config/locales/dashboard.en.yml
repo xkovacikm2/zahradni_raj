@@ -13,3 +13,8 @@ en:
       heading: "Unresolved requests"
       paragraph: "Show unresolved requests"
       action: "Go and show unresolved requests"
+
+    emails:
+      heading: "Mass emails"
+      paragraph: "Send mass emails to customers"
+      action: "Go and send emails"

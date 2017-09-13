@@ -7,9 +7,14 @@
     customers:
       heading: "nový zákazník"
       paragraph: "vytvořit nového zákazníka"
-      action: "Jdi a vytvoř nového zákazníka"
+      action: "Klikni a vytvoř nového zákazníka"
 
     requests:
       heading: "nedořešené poptávky"
       paragraph: "zobrazit nedořešené poptávky"
-      action: "jdi a zobraz nedořešené poptávky"
+      action: "Klikni a zobraz nedořešené poptávky"
+
+    emails:
+      heading: "Hromadné maily"
+      paragraph: "Zasílaní hromadních mailů zákazníkům"
+      action: "Klikni a zašli hromadní email"
