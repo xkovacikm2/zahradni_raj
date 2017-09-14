@@ -1,17 +1,8 @@
 class CustomerMailer < ActionMailer::Base
   default from: 'info@zahradniraj.cz'
 
-  def mass_emails(filter = {}, content = '', subject = '')
-    customers = Customer.filter_by(filter)
-    Logger.log customers.map(&:emails).join(', ')
+  def mass_emails(email, content = '', subject = '')
     @content = content
-
-    customers.each do |customer|
-      begin
-        mail(to: customer.email, subject: subject)
-      rescue Exception => e
-        Logger.log e
-      end
-    end
+    mail(to: email, subject: subject)
   end
 end
