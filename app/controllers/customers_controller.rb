@@ -37,8 +37,7 @@ class CustomersController < ApplicationController
   end
 
   def send_emails
-    @customers = Customer.filter_by(params[:filter])
-    CustomerMailer.mass_emails(@customers, params[:content], params[:subject]).deliver_now
+    CustomerMailer.mass_emails(params[:filter], params[:content], params[:subject]).deliver_later
 
     redirect_to customers_path, notice: t('resources.email.delivered')
   end
