@@ -1,0 +1,8 @@
+en:
+  email:
+    scheduled: 'Email delivery has been scheduled'
+
+  activerecord:
+    attributes:
+      body: 'Email body'
+      subject: 'Email subject'

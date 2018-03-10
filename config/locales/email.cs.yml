@@ -1,0 +1,8 @@
+cs:
+  email:
+    scheduled: 'Email naplánován pro odeslání'
+
+  activerecord:
+    attributes:
+      body: 'Tělo emailu'
+      subject: 'Předmět'

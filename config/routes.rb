@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :emails, except: [:edit, :update, :destroy]
   resources :offers, except: [:index, :show]
   resources :offer_files, only: :destroy
   resources :recruitment_centers, except: :show

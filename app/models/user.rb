@@ -6,4 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, format: Devise.email_regexp, presence: true, uniqueness: true
+
+  default_scope -> () { order id: :asc }
 end
