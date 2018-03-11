@@ -1,4 +1,4 @@
-module Cron::EmailSenderService
+module EmailSenderService
   extend self
 
   def send_scheduled

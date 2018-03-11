@@ -1,9 +1,9 @@
-require Rails.root.join 'app', 'services', 'cron', 'email_sender_service'
+require Rails.root.join 'app', 'services', 'email_sender_service'
 
 namespace :emails do
 
   task :send do
-    Cron::EmailSenderService.send_scheduled
+    EmailSenderService.send_scheduled
   end
 
 end
