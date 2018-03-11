@@ -1,0 +1,6 @@
+= bootstrap_nested_form_for @email, layout: :horizontal, label_col: 'col-sm-3', control_col: 'col-sm-8' do |f|
+  = f.alert_message t('views.forms.alert_message')
+
+  = f.text_field :subject, placeholder: t('activerecord.attributes.email.subject'), label: t('activerecord.attributes.email.subject')
+  = f.text_area :body, label: t('activerecord.attributes.email.body'), class: 'wysihtml5'
+  = f.submit t('resources.email.send'), class: 'btn btn-primary btn-block', :data => { :confirm => t('resources.email.confirm') }

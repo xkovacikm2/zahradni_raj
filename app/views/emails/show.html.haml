@@ -1,0 +1,22 @@
+- @page_title = t 'email.show.title'
+
+.box.box-primary
+  .box-header.with-border
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_email_path, class: 'btn btn-default btn-sm'
+      = icon_link_to 'list', t('resources.list'), emails_path, class: 'btn btn-default btn-sm'
+
+  .box-body
+    %dl.dl-horizontal.dl-details
+      %dt= t 'activerecord.attributes.email.subject'
+      %dd= @email.subject
+
+      %dt= t 'activerecord.attributes.email.sent_to'
+      %dd= @email.sent_to
+
+      %dt= t 'activerecord.attributes.email.scheduled_to'
+      %dd= @email.scheduled_to
+
+      %dt= t 'activerecord.attributes.email.body'
+      %dd= @email.body.html_safe
+

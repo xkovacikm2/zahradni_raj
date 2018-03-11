@@ -1,0 +1,17 @@
+cs:
+  user:
+    edit:
+      title: "Upravit používatele"
+    new:
+      title: "Nový použivatel"
+    show:
+      title: "Zobrazit používatele"
+    index:
+      title: "Seznam použivatelů"
+
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        password: "Heslo"
+        password_confirmation: "Potvrdit heslo"

@@ -1,8 +1,17 @@
 cs:
   email:
+    new:
+      title: 'Nový email'
+    show:
+      title: 'Zobrazit email'
+    index:
+      title: 'Emaily'
     scheduled: 'Email naplánován pro odeslání'
 
   activerecord:
     attributes:
       body: 'Tělo emailu'
       subject: 'Předmět'
+      sent_to: 'Odesláno lidem'
+      scheduled_to: 'Naplánovano odeslání lidem'
+      created_at: 'Čas vytvoření'

@@ -1,8 +1,17 @@
 en:
   email:
+    new:
+      title: 'New email'
+    show:
+      title: 'Show email'
+    index:
+      title: 'Emails'
     scheduled: 'Email delivery has been scheduled'
 
   activerecord:
     attributes:
       body: 'Email body'
       subject: 'Email subject'
+      sent_to: 'Sent to'
+      scheduled_to: 'Scheduled to'
+      created_at: 'Created at'

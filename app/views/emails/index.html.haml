@@ -1,0 +1,42 @@
+- @page_title = t 'email.index.title'
+
+.box
+  .box-header.with-border
+    %h3.box-title
+    .box-tools
+      = icon_link_to 'plus', t('resources.new'), new_email_path, class: 'btn btn-primary btn-sm'
+
+  .box-body
+    = search_form Email, {subject: {},
+                          created_at: {from_to: true, type: :date}}
+
+    %small.pull-right.text-muted
+      = t 'resources.count', count: number_with_delimiter(@emails.total_count)
+      \|
+      = t 'resources.pages', count: number_with_delimiter(@emails.total_pages)
+    = paginate @emails
+
+    %table.table
+      %thead
+        %tr
+          %th= t('activerecord.attributes.email.id')
+          %th= t('activerecord.attributes.email.subject')
+          %th= t('activerecord.attributes.email.sent_to')
+          %th= t('activerecord.attributes.email.scheduled_to')
+          %th
+
+      %tbody.rowlink
+        - if @emails.total_count == 0
+          %tr
+            %td{colspan: 5}= t 'resources.no_items'
+        - @emails.each do |email|
+          %tr
+            %td= email.id
+            %td= email.subject
+            %td= email.sent_to
+            %td= email.scheduled_to
+
+            %td
+              = icon_link_to 'info-circle', t('resources.show'), email, class: 'btn btn-primary btn-xs'
+
+    %br

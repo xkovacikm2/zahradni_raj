@@ -1,5 +1,5 @@
 class EmailsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user!
 
   def index
     @emails = Email.all.page params[:page]
@@ -32,8 +32,8 @@ class EmailsController < ApplicationController
     processed = 0
 
     while processed < total_users
-      user_ids = User.all.order(id: :asc).limit(EMAIL_LIMIT).offset(processed).pluck(:id)
-      EmailScheduleLog.create user_ids: user_ids, email: email
+      customer_ids = Customer.all.order(id: :desc).limit(EMAIL_LIMIT).offset(processed).pluck(:id)
+      EmailScheduleLog.create user_ids: customer_ids, email: email
       processed += EMAIL_LIMIT
     end
   end

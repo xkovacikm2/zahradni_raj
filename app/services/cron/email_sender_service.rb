@@ -4,6 +4,7 @@ module Cron::EmailSenderService
   def send_scheduled
     schedule = EmailScheduleLog.scheduled.first
     schedule.in_progress!
+    schedule.save
 
     customers = Customer.where(id: schedule.user_ids)
 
@@ -11,6 +12,7 @@ module Cron::EmailSenderService
       CustomerMailer.mass_emails(customer.email, schedule.email.body, schedule.email.subject).deliver_now
     end
 
-    schedule.finished
+    schedule.finished!
+    schedule.save
   end
 end

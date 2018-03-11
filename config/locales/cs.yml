@@ -37,6 +37,7 @@
     show: "ukaž"
     new: "nový"
     list: "list"
+    scheduled: "Naplánováno odesláni emailů"
     count: "počet %{count}"
     pages: "stránky %{count}"
     no_items: "žádné složky"
