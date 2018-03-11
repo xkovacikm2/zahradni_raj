@@ -28,7 +28,7 @@ class EmailsController < ApplicationController
   EMAIL_LIMIT = 900
 
   def schedule(email)
-    total_users = User.count
+    total_users = Customer.count
     processed = 0
 
     while processed < total_users
