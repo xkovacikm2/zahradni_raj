@@ -3,6 +3,8 @@ module Cron::EmailSenderService
 
   def send_scheduled
     schedule = EmailScheduleLog.scheduled.first
+    return if schedule.nil?
+
     schedule.in_progress!
     schedule.save
 
