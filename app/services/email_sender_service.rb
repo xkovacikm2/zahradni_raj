@@ -11,7 +11,7 @@ module EmailSenderService
     customers = Customer.where(id: schedule.user_ids)
 
     customers.each do |customer|
-      CustomerMailer.mass_emails(customer.email, schedule.email.body, schedule.email.subject).deliver_now
+      CustomerMailer.mass_emails(customer.email, schedule.email.body, schedule.email.subject).deliver_later
     end
 
     schedule.finished!
