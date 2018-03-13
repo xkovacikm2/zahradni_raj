@@ -64,7 +64,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for zraj
   config.action_mailer.smtp_settings = {
-      :address              => "email.active24.com",
+      :address              => ENV['zraj_smtp_service'],
       :port                 => 587,
       :user_name            => ENV['zraj_username'],
       :password             => ENV['zraj_password'],
